@@ -19,7 +19,7 @@ SHELL         = /bin/sh
 #  The complete path to the top level of ScaLAPACK directory, usually
 #  $(HOME)/SCALAPACK
 #
-home          = /home/ubuntu/sandbox/src/ext_libs/scalapack-1.8.0
+home          = /home/ubuntu/lib/scalapack-1.8.0
 #
 #  The platform identifier to suffix to the end of library names
 #
@@ -29,7 +29,7 @@ PLAT          = LINUX
 #  and the directory where the BLACS libraries are
 #
 BLACSDBGLVL   = 0
-BLACSdir      = $(HOME)/sandbox/src/ext_libs/BLACS/LIB
+BLACSdir      = /home/ubuntu/lib/BLACS/LIB
 #
 #  MPI setup; tailor to your system if using MPIBLACS
 #  Will need to comment out these 6 lines if using PVM
@@ -93,8 +93,8 @@ RANLIB        = ranlib
 #  The name of the libraries to be created/linked to
 #
 SCALAPACKLIB  = $(home)/libscalapack.a
-BLASLIB       = /home/ubuntu/sandbox/src/ext_libs/lapack-3.3.1/libblas.a
-LAPACKLIB     = /home/ubuntu/sandbox/src/ext_libs/lapack-3.3.1/liblapack.a
+BLASLIB       = /home/ubuntu/lib/lapack-3.3.1/libblas.a
+LAPACKLIB     = /home/ubuntu/lib/lapack-3.3.1/liblapack.a
 #
 PBLIBS        = $(SCALAPACKLIB) $(FBLACSLIB) $(LAPACKLIB) $(BLASLIB) $(SMPLIB)
 PRLIBS        = $(SCALAPACKLIB) $(CBLACSLIB) $(SMPLIB)

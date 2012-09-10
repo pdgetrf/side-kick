@@ -13,7 +13,7 @@
 #  -----------------------------
 #  The top level BLACS directory
 #  -----------------------------
-   BTOPdir = /home/ubuntu/sandbox/src/ext_libs/BLACS
+   BTOPdir = /home/ubuntu/lib/BLACS
 
 #  ---------------------------------------------------------------------------
 #  The communication library your BLACS have been written for.
