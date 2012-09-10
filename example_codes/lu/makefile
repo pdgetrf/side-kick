@@ -5,15 +5,14 @@ FC = mpif77
 
 HOME = /home/ubuntu/sandbox/src
 
-BLACSLIB =  $(HOME)/BLACS/LIB/blacsCinit_MPI-LINUX-0.a  $(HOME)/ext_libs/BLACS/LIB//blacsF77init_MPI-LINUX-0.a  $(HOME)/ext_libs/BLACS/LIB//blacs_MPI-LINUX-0.a
+BLACSLIB =  $(HOME)/ext_libs/BLACS/LIB/blacsCinit_MPI-LINUX-0.a  $(HOME)/ext_libs/BLACS/LIB//blacsF77init_MPI-LINUX-0.a  $(HOME)/ext_libs/BLACS/LIB//blacs_MPI-LINUX-0.a
 
 MKLROOT   = /home/ubuntu/sandbox/src/ext_libs/lapack-3.3.1
-FASTBLASLIB = -L$(MKLROOT) -llapack -lblas
+FASTBLASLIB = -L$(MKLROOT) -lscalapack $(BLACSLIB) -llapack -lblas
 #FASTBLASLIB = -L$(MKLROOT)/lib/intel64 -Wl,--start-group -lscalapack $(BLACSLIB)  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -Wl,--end-group -fopenmp
-GPULIB = 
 
 CUDADIR   = 
-INC       = -I$(CUDADIR)/include 
+INC       = -I$(CUDADIR)/include
 
 
 CFLAGS = -Wall -I$(HOME)/ext_libs/scalapack-1.8.0/PBLAS/SRC -I$(HOME)/ext_libs/scalapack-1.8.0/PBLAS/SRC/PTOOLS -I/home/ubuntu/lib/mpich2/include
@@ -22,7 +21,6 @@ FFLAGS =  -fsecond-underscore
 
 LDFLAGS =  -L$(HOME)/ext_libs/lapack-3.3.1\
 		   -L$(HOME)/ext_libs/scalapack-1.8.0 \
-		   -L$(HOME)/ext_libs/lapack-3.3.0 \
 		   -L$(HOME)/ext_libs/BLACS/LIB/ 
 
 
